@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - moim:</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0D3B66;
+            --navy-light: #1A4F7A;
+            --navy-dark: #082844;
+            --gold: #F4B41A;
+            --gold-light: #F7C94B;
+            --gold-dark: #D99E0B;
+            --white: #FFFFFF;
+            --cream: #FAFBFC;
+            --peach: #FFE8E0;
+            --peach-light: #FFF5F2;
+            --text: #1A1A2E;
+            --text-light: #64748B;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .logo-img {
+            height: 36px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .footer-logo {
+            height: 28px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Hero Banner */
+        .page-hero {
+            padding: 9rem 4rem 3rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--white);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .page-hero .effective-date {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .page-hero .effective-date::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* Content */
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--gray-200);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 8px 24px rgba(13, 59, 102, 0.08);
+        }
+
+        .content-section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h2 .section-number {
+            width: 32px;
+            height: 32px;
+            background: var(--navy);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .content-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 1.25rem 0 0.5rem;
+        }
+
+        .content-section p {
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            margin-bottom: 0.75rem;
+        }
+
+        .content-section ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .content-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .highlight-box {
+            background: var(--peach-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--navy-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .contact-box {
+            background: var(--navy);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-box a {
+            color: var(--gold);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--navy);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .page-hero {
+                padding: 7rem 1.5rem 2.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1rem 4rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <img src="images/logo.png" alt="moim:" class="logo-img">
+            <span class="logo-text">moim<span>:</span></span>
+        </a>
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+    </header>
+
+    <section class="page-hero">
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective from November 1, 2025</p>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="content-section">
+            <p>This Privacy Policy describes how Heyjaws ("we", "our", or "us") collects, uses, and shares your personal information when you use our Moim application and related services (the "Service").</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">1</span> Information We Collect</h2>
+            <h3>Information You Provide</h3>
+            <ul>
+                <li>Account information such as nickname, email address, password, profile photo, interests, and bio</li>
+                <li>Content you create including posts, photos, videos, comments, and messages</li>
+                <li>Customer support inquiries including your email and message content</li>
+            </ul>
+            <h3>Information Collected Automatically</h3>
+            <ul>
+                <li>Location data via GPS or IP address (with your permission)</li>
+                <li>Device information including model, OS, and advertising identifiers (ADID/IDFA)</li>
+                <li>Usage data such as access logs, session duration, and app usage frequency</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">2</span> How We Use Your Information</h2>
+            <ul>
+                <li><strong>Service Provision:</strong> To provide and maintain our Service under our contract with you</li>
+                <li><strong>Consent-Based Processing:</strong> For purposes you have explicitly agreed to</li>
+                <li><strong>Legitimate Interests:</strong> Fraud prevention, service improvement, and analytics</li>
+                <li><strong>Legal Compliance:</strong> To fulfill legal obligations</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">3</span> Information Sharing</h2>
+            <p>We do not share your personal information with third parties without your consent, except:</p>
+            <ul>
+                <li>With other users as part of the Service's community features</li>
+                <li>With service providers for cloud hosting, analytics, and other operational needs</li>
+                <li>When required by law or legal process</li>
+                <li>In connection with a business transfer, merger, or acquisition</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">4</span> International Data Transfers</h2>
+            <p>Your information may be stored and processed in various countries where our facilities or service providers are located. We implement appropriate safeguards for international transfers.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">5</span> Additional Rights for Malaysia Users</h2>
+            <div class="highlight-box">
+                <p>Under the Personal Data Protection Act 2010 (PDPA), Malaysian users have specific rights including explicit consent requirements and the right to restrict processing.</p>
+            </div>
+            <p>While providing personal information is voluntary, certain features may be limited without it.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">6</span> Data Retention</h2>
+            <p>We retain your personal information while your account is active. Upon request, we will delete your data unless we are legally required to retain it for a longer period.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">7</span> Your Rights</h2>
+            <p>You have the following rights regarding your personal information:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your data</li>
+                <li><strong>Rectification:</strong> Correct inaccurate information</li>
+                <li><strong>Erasure:</strong> Request deletion of your data ("right to be forgotten")</li>
+                <li><strong>Restriction:</strong> Limit how we process your data</li>
+                <li><strong>Portability:</strong> Receive your data in a portable format</li>
+                <li><strong>Objection:</strong> Object to certain processing activities</li>
+                <li><strong>Withdraw Consent:</strong> Revoke previously given consent</li>
+            </ul>
+            <p>Exercise these rights through Account Settings or by contacting us.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">8</span> Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your information, including encryption and access controls. However, no system is completely secure.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">9</span> Children's Privacy</h2>
+            <p>Our Service is not directed to children under 16 (or the applicable age of consent in your jurisdiction). We do not knowingly collect personal information from children.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">10</span> Policy Updates</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of material changes through the Service or via email.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">11</span> Contact Us</h2>
+            <div class="contact-box">
+                <h3>Data Protection Team</h3>
+                <p>For questions about this Privacy Policy or to exercise your rights:</p>
+                <a href="mailto:hi@heyjaws.co">hi@heyjaws.co</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="/"><img src="images/logo.png" alt="moim:" class="footer-logo"></a>
+                <span class="footer-copyright">© 2025 Heyjaws Ltd.</span>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tc.html">Terms & Conditions</a>
+                <a href="contactus.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

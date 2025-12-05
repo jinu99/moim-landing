@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - moim:</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0D3B66;
+            --navy-light: #1A4F7A;
+            --navy-dark: #082844;
+            --gold: #F4B41A;
+            --gold-light: #F7C94B;
+            --gold-dark: #D99E0B;
+            --white: #FFFFFF;
+            --cream: #FAFBFC;
+            --peach: #FFE8E0;
+            --peach-light: #FFF5F2;
+            --text: #1A1A2E;
+            --text-light: #64748B;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --red-light: #FEF2F2;
+            --red: #EF4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .logo-img {
+            height: 36px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .footer-logo {
+            height: 28px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Hero Banner */
+        .page-hero {
+            padding: 9rem 4rem 3rem;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--white);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--navy);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .page-hero .effective-date {
+            font-size: 0.95rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .page-hero .effective-date::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--navy);
+            border-radius: 50%;
+        }
+
+        /* Content */
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--gray-200);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 8px 24px rgba(13, 59, 102, 0.08);
+        }
+
+        .content-section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h2 .section-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            color: var(--navy-dark);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            margin-bottom: 0.75rem;
+        }
+
+        .content-section ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .content-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 5px;
+            height: 5px;
+            background: var(--navy);
+            border-radius: 50%;
+        }
+
+        .warning-box {
+            background: var(--red-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-left: 4px solid var(--red);
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .info-box {
+            background: var(--peach-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .info-box p {
+            margin: 0;
+            color: var(--navy-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .jurisdiction-box {
+            background: var(--navy);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+            margin-top: 1.25rem;
+        }
+
+        .jurisdiction-box h3 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .jurisdiction-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-box {
+            background: var(--gold);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            color: var(--navy-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-box a {
+            color: var(--navy-dark);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--navy);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .page-hero {
+                padding: 7rem 1.5rem 2.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1rem 4rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <img src="images/logo.png" alt="moim:" class="logo-img">
+            <span class="logo-text">moim<span>:</span></span>
+        </a>
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+    </header>
+
+    <section class="page-hero">
+        <h1>Terms & Conditions</h1>
+        <p class="effective-date">Effective from November 1, 2025</p>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="content-section">
+            <p>Welcome to Moim! These Terms and Conditions ("Terms") govern your use of the Moim application and related services (the "Service") provided by Heyjaws ("Company", "we", "our", or "us"). By using our Service, you agree to these Terms.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">1</span> Definitions</h2>
+            <ul>
+                <li><strong>"Service"</strong> refers to the Moim application and all related services</li>
+                <li><strong>"Content"</strong> means text, graphics, images, videos, and other materials posted or uploaded by users</li>
+                <li><strong>"User"</strong> refers to any individual who accesses or uses the Service</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">2</span> Eligibility</h2>
+            <p>To use our Service, you must:</p>
+            <ul>
+                <li>Be at least 18 years of age</li>
+                <li>Provide accurate and complete registration information</li>
+                <li>Maintain the security of your password and account</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">3</span> Service Features</h2>
+            <p>Moim provides the following features:</p>
+            <ul>
+                <li>Create and participate in social gatherings (Moims)</li>
+                <li>Interact with local community boards</li>
+                <li>Connect with neighbors who share similar interests</li>
+                <li>Organize events and group activities</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">4</span> Prohibited Activities</h2>
+            <p>Users are strictly prohibited from:</p>
+            <ul>
+                <li>Using the Service for illegal or fraudulent purposes</li>
+                <li>Posting obscene, vulgar, or offensive content</li>
+                <li>Harassing, intimidating, or stalking other users</li>
+                <li>Sending spam or unauthorized advertisements</li>
+                <li>Impersonating other individuals or entities</li>
+                <li>Organizing illegal gambling, prostitution, or other prohibited activities</li>
+            </ul>
+            <div class="warning-box">
+                <p>Violation of these rules may result in immediate account termination without prior notice.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">5</span> User Generated Content</h2>
+            <p>By posting content on Moim, you grant us a non-exclusive, transferable, worldwide, royalty-free license to use, display, and distribute your content in connection with the Service.</p>
+            <div class="info-box">
+                <p>You retain ownership of your content but grant us rights to use it for operating and improving the Service.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">6</span> Offline Meetings Disclaimer</h2>
+            <p>The Company is not responsible for any loss, injury, or damage arising from:</p>
+            <ul>
+                <li>Attendance at offline gatherings organized through the Service</li>
+                <li>Interactions between users in person</li>
+                <li>Any activities that occur outside the digital platform</li>
+            </ul>
+            <div class="warning-box">
+                <p>Users participate in offline meetings at their own risk. Always prioritize personal safety.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">7</span> Community Board</h2>
+            <p>The Company does not verify the accuracy of posts on community boards and is not responsible for:</p>
+            <ul>
+                <li>The truthfulness of user-posted information</li>
+                <li>Transactions between users</li>
+                <li>Disputes arising from community board interactions</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">8</span> Account Termination</h2>
+            <p>We reserve the right to suspend or terminate your account without prior notice if you violate these Terms or engage in activities that harm the community or Service.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">9</span> Disclaimer of Warranties</h2>
+            <p>The Service is provided "as is" without warranties of any kind, whether express or implied. We do not guarantee that the Service will be:</p>
+            <ul>
+                <li>Uninterrupted or error-free</li>
+                <li>Free from viruses or harmful components</li>
+                <li>Suitable for your specific needs</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">10</span> Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, the Company shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">11</span> Indemnification</h2>
+            <p>You agree to indemnify and hold harmless the Company from any claims, damages, or expenses arising from your violation of these Terms or your use of the Service.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">12</span> Governing Law</h2>
+            <p>These Terms are governed by the laws of Malaysia. Any disputes shall be subject to the exclusive jurisdiction of Malaysian courts.</p>
+            <div class="jurisdiction-box">
+                <h3>Jurisdiction</h3>
+                <p>Malaysian courts have exclusive jurisdiction over any disputes arising from these Terms.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">13</span> Changes to Terms</h2>
+            <p>We may modify these Terms at any time. We will notify you of material changes through the Service or via email. Continued use after changes constitutes acceptance of the new Terms.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="section-number">14</span> Contact Us</h2>
+            <div class="contact-box">
+                <h3>Questions about these Terms?</h3>
+                <p>Reach out to us at:</p>
+                <a href="mailto:hi@heyjaws.co">hi@heyjaws.co</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="/"><img src="images/logo.png" alt="moim:" class="footer-logo"></a>
+                <span class="footer-copyright">© 2025 Heyjaws Ltd.</span>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tc.html">Terms & Conditions</a>
+                <a href="contactus.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

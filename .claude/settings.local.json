@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:moim.heyjaws.co)",
+      "Skill(frontend-design:frontend-design)",
+      "Bash(open:*)",
+      "Bash(/usr/bin/open:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
