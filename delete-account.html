@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - moim:</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0D3B66;
+            --navy-light: #1A4F7A;
+            --navy-dark: #082844;
+            --gold: #F4B41A;
+            --gold-light: #F7C94B;
+            --gold-dark: #D99E0B;
+            --white: #FFFFFF;
+            --cream: #FAFBFC;
+            --peach: #FFE8E0;
+            --peach-light: #FFF5F2;
+            --text: #1A1A2E;
+            --text-light: #64748B;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --red: #E74C3C;
+            --red-light: #FDF2F2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .logo-img {
+            height: 36px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .footer-logo {
+            height: 28px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Hero Banner */
+        .page-hero {
+            padding: 9rem 4rem 3rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--white);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .page-hero .subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Content */
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--gray-200);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 8px 24px rgba(13, 59, 102, 0.08);
+        }
+
+        .content-section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h2 .section-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--navy);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .content-section p {
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        /* Steps */
+        .steps {
+            margin-top: 1rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            color: var(--navy-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content strong {
+            color: var(--navy);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Data List */
+        .data-list {
+            background: var(--red-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+            border-left: 4px solid var(--red);
+        }
+
+        .data-list h3 {
+            color: var(--red);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .data-list ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .data-list ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .data-list ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 5px;
+            height: 5px;
+            background: var(--red);
+            border-radius: 50%;
+        }
+
+        .data-list .warning {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(231, 76, 60, 0.2);
+            font-size: 0.85rem;
+            color: var(--red);
+            font-weight: 500;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--navy);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-box a {
+            color: var(--gold);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-box .note {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--navy);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .page-hero {
+                padding: 7rem 1.5rem 2.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1rem 4rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./" class="logo">
+            <img src="images/logo.png" alt="moim:" class="logo-img">
+            <span class="logo-text">moim<span>:</span></span>
+        </a>
+        <a href="./" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+    </header>
+
+    <section class="page-hero">
+        <h1>Delete Your Account</h1>
+        <p class="subtitle">Account Deletion Information</p>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="content-section">
+            <h2>
+                <span class="section-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </span>
+                How to Delete Your Account
+            </h2>
+            <p>You can delete your moim account directly from the app. Follow these simple steps:</p>
+
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <strong>Open Settings</strong>
+                        <p>Launch the moim app and tap on the Settings tab.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <strong>Go to Account Management</strong>
+                        <p>Select "Account Management" from the settings menu.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <strong>Request Deletion</strong>
+                        <p>Tap "Delete Account" and follow the confirmation prompts.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <strong>Confirm</strong>
+                        <p>Your account will be permanently deleted immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>
+                <span class="section-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                </span>
+                Data That Will Be Deleted
+            </h2>
+            <p>When you delete your account, the following data will be permanently removed:</p>
+
+            <div class="data-list">
+                <h3>Permanently Deleted</h3>
+                <ul>
+                    <li>Profile information (name, photo, interests, bio)</li>
+                    <li>Posts and comments you've created</li>
+                    <li>Chat messages and conversations</li>
+                    <li>Group membership and participation history</li>
+                    <li>Notification history</li>
+                    <li>All associated media files</li>
+                </ul>
+                <p class="warning">This action cannot be undone. Please make sure you want to proceed.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>
+                <span class="section-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </span>
+                Need Help?
+            </h2>
+            <p>If you're having trouble deleting your account through the app, you can request deletion via email.</p>
+
+            <div class="contact-box">
+                <h3>Contact Support</h3>
+                <p>Send us an email and we'll process your request.</p>
+                <a href="mailto:hi@heyjaws.co">hi@heyjaws.co</a>
+                <p class="note">Requests are processed within 30 days.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="./"><img src="images/logo.png" alt="moim:" class="footer-logo"></a>
+                <span class="footer-copyright">&copy; 2025 Heyjaws Ltd.</span>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tc.html">Terms & Conditions</a>
+                <a href="contactus.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
